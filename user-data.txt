@@ -16,16 +16,16 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # clone
 cd /home/centos/
-git clone https://github.com/claesmathias/lightsail-cs16.git
+git clone https://github.com/claesmathias/lightsail-counterstrike.git
 
 # set permissions
-sudo chown -R centos:centos /home/centos/lightsail-cs16/
+sudo chown -R centos:centos /home/centos/lightsail-counterstrike/
 
 # set selinux permissions
 sudo chcon -Rt svirt_sandbox_file_t /home/centos
 
 # start docker containers
-cd /home/centos/lightsail-cs16/
+cd /home/centos/lightsail-counterstrike/
 /usr/local/bin/docker-compose up -d
 
 # reset ssh permissions
