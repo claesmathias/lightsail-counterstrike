@@ -18,17 +18,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 cd /home/centos/
 git clone https://github.com/claesmathias/lightsail-cs.git
 
-# set noip variables
-cat <<EOF >/home/centos/lightsail-juiceshop/noip.conf
-# This is an email address
-USERNAME='mail@example.com'
-PASSWORD='****************'
-# Your hostname, group name, or a comma-delimited list of a mix of them.
-DOMAINS='-.example.com,www.example.com'
-# Examples: 5 m, 5 h, 5 d. Minimum is 5 minutes.
-INTERVAL='5m'
-EOF
-
 # set permissions
 sudo chown -R centos:centos /home/centos/lightsail-cs/
 
