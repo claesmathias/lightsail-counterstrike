@@ -1,4 +1,4 @@
-# lightsail-cs16
+# lightsail-counterstrike
 HLDS Counter Strike 1.6 Server
 
 ## Create instance
