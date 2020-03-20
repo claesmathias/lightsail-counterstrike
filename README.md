@@ -20,17 +20,16 @@ Static IP addresses are free only while attached to an instance. You can manage 
 ```
 aws lightsail allocate-static-ip --static-ip-name cs-vm-static-ip
 aws lightsail attach-static-ip --static-ip-name cs-vm-static-ip --instance-name cs-vm
-aws lightsail get-static-ip --static-ip-name cs-vm-static-ip | grep ipAddress
 ```
 
 ### SSH
 Download the key file [here](https://lightsail.aws.amazon.com/ls/webapp/account/keys "AWS Lightsail keys")
 ```
-chmod 600 LightsailDefaultKey-eu-central-1.pem 
+chmod 600 LightsailDefaultKey-eu-west-2.pem 
 ```
 Obtain the public IP
 ```
-aws lightsail get-instance --instance-name lightsail-eu-central-vm | grep publicIpAddress
+aws lightsail get-static-ip --static-ip-name cs-vm-static-ip | grep ipAddress
 ```
 Login to your instance
 ```
