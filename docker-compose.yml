@@ -15,5 +15,5 @@ services:
       - 27015:27015/udp
       - 27015:27015
     volumes:
-      - /home/centos/lightsail-cs16/server.cfg:/hlds/cstrike/server.cfg
+      - /home/centos/lightsail-counterstrike/server.cfg:/hlds/cstrike/server.cfg
 
