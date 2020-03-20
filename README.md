@@ -42,7 +42,8 @@ Login with RCON privileges on your server:
 1. Press the ~ key once your game loads up
 2. In the dialog box that comes up type in ```rcon_password password```
 3. You are now logged into your server with rcon privileges
+
 Sample RCON Commands
-Changing the map : ```rcon changelevel de_dust```
-Kick a user : type ```rcon users``` to get IDs and then type ```rcon kick [userid]```
+*Changing the map : ```rcon changelevel de_dust```
+*Kick a user : type ```rcon users``` to get IDs and then type ```rcon kick [userid]```
 
