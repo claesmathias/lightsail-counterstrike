@@ -12,6 +12,28 @@ You can find the script in `/var/lib/cloud/instance/user-data.txt` on the instan
 ### Open ports
 ```
 aws lightsail open-instance-public-ports --port-info fromPort=27015,toPort=27015,protocol=TCP --instance-name cs-vm
-aws lightsail open-instance-public-ports --port-info fromPort=27015,toPort=27015:27015,protocol=UDP --instance-name cs-vm
+aws lightsail open-instance-public-ports --port-info fromPort=27015,toPort=27015,protocol=UDP --instance-name cs-vm
 ```
 
+### Assign static IP (optional)
+Static IP addresses are free only while attached to an instance. You can manage five at no additional cost.
+```
+aws lightsail allocate-static-ip --static-ip-name cs-vm-static-ip
+aws lightsail attach-static-ip --static-ip-name cs-vm-static-ip --instance-name cs-vm
+aws lightsail get-static-ip --static-ip-name cs-vm-static-ip | grep ipAddress
+```
+
+### SSH
+Download the key file [here](https://lightsail.aws.amazon.com/ls/webapp/account/keys "AWS Lightsail keys")
+```
+chmod 600 LightsailDefaultKey-eu-central-1.pem 
+```
+Obtain the public IP
+```
+aws lightsail get-instance --instance-name lightsail-eu-central-vm | grep publicIpAddress
+```
+Login to your instance
+```
+ssh -i LightsailDefaultKey-eu-central-1.pem  centos@PUBLIC_IP
+```
+View instances [here](https://lightsail.aws.amazon.com/ls/webapp/home/instances "View instances")
