@@ -20,9 +20,10 @@ git clone https://github.com/claesmathias/lightsail-counterstrike.git
 
 # set docker-compose environment variables
 cat <<EOF >/home/centos/lightsail-counterstrike/.env
-HOST_IP=$(hostname --ip-address)
-SUBDOMAINS=subdomain.duckdns.org
-TOKEN=duck-dns-token
+DUCKDNS_SUBDOMAINS=subdomain.duckdns.org
+DUCKDNS_TOKEN=duck-dns-token
+CS_MAP=de_dust
+CS_MAXPLAYERS=16
 TZ=Europe/Brussels
 EOF
 
