@@ -45,6 +45,7 @@ Login with RCON privileges on your server:
 3. You are now logged into your server with rcon privileges
 
 Sample RCON Commands
+* Changing server password : ```rcon sv_password password```
 * Changing the map : ```rcon changelevel de_dust```
 * Kick a user : type ```rcon users``` to get IDs and then type ```rcon kick [userid]```
 
