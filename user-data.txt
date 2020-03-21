@@ -18,6 +18,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 cd /home/centos/
 git clone https://github.com/claesmathias/lightsail-counterstrike.git
 
+# set docker-compose environment variables
+cat <<EOF >/home/centos/lightsail-counterstrike/.env
+HOST_IP=$(hostname --ip-address)
+SUBDOMAINS=subdomain.duckdns.org
+TOKEN=duck-dns-token
+TZ=Europe/Brussels
+EOF
+
 # set permissions
 sudo chown -R centos:centos /home/centos/lightsail-counterstrike/
 
