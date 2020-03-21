@@ -29,6 +29,7 @@ chmod 600 LightsailDefaultKey-eu-west-2.pem
 ```
 Obtain the public IP
 ```
+aws lightsail get-instance --instance-name cs-vm | grep publicIpAddress
 aws lightsail get-static-ip --static-ip-name cs-vm-static-ip | grep ipAddress
 ```
 Login to your instance
