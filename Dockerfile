@@ -16,7 +16,7 @@ ENV SV_LAN 0
 # install dependencies
 RUN dpkg --add-architecture i386
 RUN apt-get update && \
-    apt-get -qqy install lib32gcc1 curl
+    apt-get -qqy install lib32gcc1 curl unzip
 
 # create directories
 WORKDIR /root
@@ -31,6 +31,12 @@ RUN ./steamcmd.sh +login anonymous +force_install_dir /hlds +app_update 90 valid
 RUN ./steamcmd.sh +login anonymous +app_update 70 validate +quit || true
 RUN ./steamcmd.sh +login anonymous +app_update 10 validate +quit || true
 RUN ./steamcmd.sh +login anonymous +force_install_dir /hlds +app_update 90 validate +quit
+
+# Add Source Maps
+COPY maps/ /temp
+RUN cd /hlds/cstrike && \
+    unzip /temp/maps.zip && \
+    rm /temp/*
 
 # link sdk
 WORKDIR /root/.steam
