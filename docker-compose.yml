@@ -3,7 +3,7 @@ version: '3'
 services:
 
   hlds:
-    container_name: counter-strike_server
+    container_name: cs-server
     build: .
     restart: always
     environment:
