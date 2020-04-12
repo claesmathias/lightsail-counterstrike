@@ -35,7 +35,7 @@ RUN ./steamcmd.sh +login anonymous +force_install_dir /hlds +app_update 90 valid
 # Add Source Maps
 COPY maps/ /temp
 RUN cd /hlds/cstrike && \
-    unzip /temp/maps.zip && \
+    unzip -f /temp/maps.zip && \
     rm /temp/*
 
 # link sdk
