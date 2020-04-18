@@ -38,6 +38,18 @@ RUN cd /hlds/cstrike && \
     unzip /temp/maps.zip && \
     rm /temp/*
 
+# Add Mods
+COPY mods/ /temp
+RUN cd /hlds/cstrike && \
+    mkdir -p addons/metamod/dlls/ && \
+    tar -xvf /temp/metamod-1.20-linux.tar.gz --directory addons/metamod/dlls/ && \
+    tar -xvf /temp/amxmodx-1.8.2-base-linux.tar.gz && \
+    tar -xvf /temp/amxmodx-1.8.2-cstrike-linux.tar.gz && \
+    rm /temp/*
+
+# Configure Mods
+COPY mods/plugins.ini /hlds/cstrike/addons/metamod
+
 # link sdk
 WORKDIR /root/.steam
 RUN ln -s ../Steam/linux32 sdk32
