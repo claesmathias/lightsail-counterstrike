@@ -49,7 +49,7 @@ RUN cd /hlds/cstrike && \
 
 # Configure Mods
 RUN cd /hlds/cstrike && \
-    sed -i 's/^gamedll_linux \"dlls\/cs.so\"/gameddl_linux \"addons\/amxmodx\/dlls\/metamod.so\"/' liblist.gam
+    sed -i 's/^gamedll_linux \"dlls\/cs.so\"/gameddl_linux \"addons\/metamod\/dlls\/metamod.so\"/' liblist.gam
 COPY mods/plugins.ini /hlds/cstrike/addons/metamod
 
 # link sdk
