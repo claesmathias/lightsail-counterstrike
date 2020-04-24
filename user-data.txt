@@ -16,8 +16,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # clone
 cd /home/centos/
-#git clone https://github.com/claesmathias/lightsail-counterstrike.git
-git clone -b 1.1 --single-branch https://github.com/claesmathias/lightsail-counterstrike.git
+git clone https://github.com/claesmathias/lightsail-counterstrike.git
+#git clone -b 1.1 --single-branch https://github.com/claesmathias/lightsail-counterstrike.git
 
 # set docker-compose environment variables
 cat <<EOF >/home/centos/lightsail-counterstrike/.env
