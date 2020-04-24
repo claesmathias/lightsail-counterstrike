@@ -48,9 +48,9 @@ RUN cd /hlds/cstrike && \
     rm /temp/*
 
 # Configure Mods
-RUN cd /hlds/cstrike && \
-    sed -i 's/^gamedll_linux \"dlls\/cs.so\"/gamedll_linux \"addons\/metamod\/dlls\/metamod_i386.so\"/' liblist.gam
-COPY mods/plugins.ini /hlds/cstrike/addons/metamod
+#RUN cd /hlds/cstrike && \
+#    sed -i 's/^gamedll_linux \"dlls\/cs.so\"/gamedll_linux \"addons\/metamod\/dlls\/metamod_i386.so\"/' liblist.gam
+#COPY mods/plugins.ini /hlds/cstrike/addons/metamod
 
 # link sdk
 WORKDIR /root/.steam
